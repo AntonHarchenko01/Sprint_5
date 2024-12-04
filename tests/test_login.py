@@ -1,7 +1,7 @@
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-from constants import Constants
+from urls import Urls
 from locators import Registration, Login, MainPage, ForgotPsw
 from conftest import driver
 from data import Data
@@ -32,7 +32,7 @@ class TestStellarBurgersLogin:
 
     # Тест входа через форму регистрации, если после успешной авторизации появилась кнопка оформить заказ на главной форме, тест пройден
     def test_login_in_registration_account_correct_data_show_order_button(self, driver):
-        driver.get(Constants.URL_REGISTER)
+        driver.get(Urls.URL_REGISTER)
         driver.find_element(*Registration.r_entry).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Login.l_entry))
         driver.find_element(*Login.l_email).send_keys(Data.LOGIN_EMAIL)
@@ -44,7 +44,7 @@ class TestStellarBurgersLogin:
 
     # Тест входа через форму восстановления пароля, если после успешной авторизации появилась кнопка оформить заказ на главной форме, тест пройден
     def test_login_in_forgot_password_correct_data_show_order_button(self, driver):
-        driver.get(Constants.URL_FORGOT_PSW)
+        driver.get(Urls.URL_FORGOT_PSW)
         driver.find_element(*ForgotPsw.fp_login).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Login.l_entry))
         driver.find_element(*Login.l_email).send_keys(Data.LOGIN_EMAIL)

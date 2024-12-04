@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import MainPage, PersonalAccount, Login
 from conftest import driver, login
-from constants import Constants
+from urls import Urls
 
 class TestStellarBurgersTransitions:
     # Переход в личный кабинет, авторизуемся, переходим в личный кабинет, если есть кнопка выход, тест пройден
@@ -41,4 +41,4 @@ class TestStellarBurgersTransitions:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(PersonalAccount.pa_exit_button))
         driver.find_element(*PersonalAccount.pa_exit_button).click()
         WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(Login.l_entry))
-        assert driver.current_url == Constants.URL_LOGIN
+        assert driver.current_url == Urls.URL_LOGIN
