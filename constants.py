@@ -6,6 +6,3 @@ class Constants:
     URL_LOGIN = 'https://stellarburgers.nomoreparties.site/login'
     URL_FORGOT_PSW = 'https://stellarburgers.nomoreparties.site/forgot-password'
 
-    # Данные зарегистрированного пользователя
-    LOGIN_EMAIL = 'anton_harchenko_16_888@yandex.ru'
-    LOGIN_PSW = '12345678'

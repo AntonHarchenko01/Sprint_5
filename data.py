@@ -7,3 +7,6 @@ class Data:
     psw = '12345678'
     inccorect_psw = '123'
 
+ # Данные зарегистрированного пользователя
+    LOGIN_EMAIL = 'anton_harchenko_16_888@yandex.ru'
+    LOGIN_PSW = '12345678'
